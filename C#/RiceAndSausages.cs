@@ -9,9 +9,6 @@ namespace Recipes {
         bool _riceDone = false;
         bool _sausagesDone = false;
 
-        public delegate void RiceAndSausagesHandle(Plate plate);
-        public event RiceAndSausagesHandle OnDone;
-
         public RiceAndSausages(Plate plate, float riceGrams, int sausageNumber) {
             _plate = plate;
             _riceGrams = riceGrams;
@@ -53,10 +50,6 @@ namespace Recipes {
             if (_riceDone) {
                 Finish();
             }
-        }
-
-        public void Finish() {
-            OnDone?.Invoke(_plate);
         }
     }
 }
