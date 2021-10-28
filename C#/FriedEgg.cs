@@ -7,9 +7,6 @@ namespace Recipes {
         Stack<Bread> _breadSlices = new Stack<Bread>();
         List<Spice> _spices = new List<Spice>();
 
-        public delegate void FriedEggHandle(Plate plate);
-        public event FriedEggHandle OnDone;
-
         public FriedEgg(Plate plate, int eggNumber) {
             _plate = plate;
 
@@ -46,7 +43,7 @@ namespace Recipes {
             _plate.Add(_breadSlices.Pop());
 
             if (_breadSlices.Count <= 0) {
-                OnDone?.Invoke(_plate);
+               Finish();
             }
         }
     }
