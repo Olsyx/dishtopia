@@ -5,7 +5,7 @@ namespace Recipes {
         Plate _plate = null;
         List<Egg> _eggs = new List<Egg>();
         Stack<Bread> _breadSlices = new Stack<Bread>();
-        List<Species> _species = new List<Species>();
+        List<Spice> _spices = new List<Spice>();
 
         public delegate void FriedEggHandle(Plate plate);
         public event FriedEggHandle OnDone;
@@ -19,8 +19,8 @@ namespace Recipes {
                 _breadSlices.Push(new Bread());
             }
 
-            _species.Add(new Salt());
-            _species.Add(new Pepper());
+            _spices.Add(new Salt());
+            _spices.Add(new Pepper());
         }
 
         public void Cook(Utensil pan, Liquid oil, Utensil spoon) {
@@ -36,7 +36,13 @@ namespace Recipes {
         }
         
         public void PutInPlate(Utensil pan, int foodIndex) {
-            _plate.Add(pan.Remove(foodIndex));
+            Egg friedEgg = pan.Remove(foodIndex);
+
+            for (int i = 0; i < _spices.Count; ++i) {
+                egg.Add(_spices.Get("pinch"));
+            }
+            
+            _plate.Add(friedEgg);
             _plate.Add(_breadSlices.Pop());
 
             if (_breadSlices.Count <= 0) {
