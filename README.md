@@ -1,5 +1,21 @@
 # Dishtopia
-A repository that holds all kinds of recipers written as programmer code!
+A beginner-friendly repository that holds all kinds of recipes written as programmer code!
+
+## What is this repository about?
+The purpose of this repository is not about real world application, but rather learning to structure and flow of code. It is aimed as a challenge to new programmers, where the stakes are none but the benefit could be infinite.
+
+You are given a boilerplate class, called Recipe. We will pretend like it is used somewhere by some program, and implement many versions of it that must theoretically work.
+
+The constraints are:
+- Each child of Recipe must represent the steps to preparing a dish. Any dish. Any food.
+- This class has an event called OnDone, which is called in the Finish() function. It must always be called when the dish is finished and ready to be served.
+- No appliances are provided, but feel free to pretend like they do!
+- Want to get even more creative? Scout the recipes and try to come up with an architecture for an appliance that will satisfy most of them as an exercise!
+- You are not restricted to one class, either! You may need several recipes to make one big dish, go nuts! (haha pun intended).
+- Have fun!
+
+## Programming Languages
+The original project was made in C#, but feel free to start a new Recipe class in any other programming language. The only requirement is that it be contained by a folder named with the programming language's name.
 
 ## Contributing & HacktoberFest
 1. Fork this repo
