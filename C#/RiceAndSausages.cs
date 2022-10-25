@@ -5,7 +5,7 @@ namespace Recipes {
     public class RiceAndSausages : Recipe {
 
         Plate _plate = null;
-        List<RiceAndSausages> _sausages = new List<Sausages>();
+        List<Sausages> _sausages = new List<Sausages>();
 
         int _riceGrams = 0;
         bool _riceDone = false;
