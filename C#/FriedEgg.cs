@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 
 namespace Recipes {
     public class FriedEgg : Recipe {
@@ -20,7 +22,7 @@ namespace Recipes {
             _spices.Add(new Pepper());
         }
 
-        public void Cook(Utensil pan, Liquid oil, Utensil spoon) {
+        public void Cook(Appliance pan, Liquid oil, Cutlery spoon) {
             Liquid oilForEggs = spoon.Take(oil, 3);
             pan.Add(oilForEggs);
 
@@ -32,7 +34,7 @@ namespace Recipes {
             pan.OnFoodDone += PutInPlate;
         }
         
-        public void PutInPlate(Utensil pan, int foodIndex) {
+        public void PutInPlate(Appliance pan, int foodIndex) {
             Egg friedEgg = pan.Remove(foodIndex);
 
             for (int i = 0; i < _spices.Count; ++i) {
