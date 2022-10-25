@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 
 namespace Recipes {
     public class RiceAndSausages : Recipe {
@@ -19,7 +21,7 @@ namespace Recipes {
             }
         }
 
-        public void Cook(Utensil riceMaker, Utensil pan, Liquid oil, Cutlery spoon, Cutlery fork) {
+        public void Cook(Appliance riceMaker, Appliance pan, Liquid oil, Cutlery spoon, Cutlery fork) {
             riceMaker.Add(new Rice(_riceGrams));
             riceMaker.Cook();
             riceMaker.OnDone += TakeRiceOut;
@@ -33,7 +35,7 @@ namespace Recipes {
             pan.OnFoodDone += TakeSausagesOut;
         }
 
-        private void TakeRiceOut(Utensil riceMaker) {
+        private void TakeRiceOut(Appliance riceMaker) {
             _plate.Add(riceMaker.Empty());
             _riceDone = true;
 
@@ -42,7 +44,7 @@ namespace Recipes {
             }
         }
 
-        public void TakeSausagesOut(Utensil pan, int foodIndex) {
+        public void TakeSausagesOut(Appliance pan, int foodIndex) {
             _plate.Add(pan.Remove(foodIndex));
             _plate.Add(_breadSlices.Pop());
             _sausagesDone = true;
